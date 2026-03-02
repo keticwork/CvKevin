@@ -1,0 +1,104 @@
+/* Importation des directives Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====================================
+   STYLES GLOBAUX — CV Kevin Pichon
+   ==================================== */
+
+/* Scroll fluide pour toute la page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Police de base et fond par défaut */
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* ====================================
+   CLASSES UTILITAIRES PERSONNALISÉES
+   ==================================== */
+
+/* Conteneur centré responsive */
+@layer components {
+  .container-cv {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Titre de section avec barre décorative */
+  .section-title {
+    @apply text-2xl sm:text-3xl font-bold text-white mb-8 relative inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply block mt-2 h-1 w-16 bg-blue-500 rounded-full;
+  }
+
+  /* Carte de base pour les blocs de contenu */
+  .card {
+    @apply bg-slate-800 border border-slate-700 rounded-xl p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply border-blue-500/50 shadow-lg shadow-blue-500/10;
+  }
+
+  /* Badge de compétence / étiquette */
+  .badge {
+    @apply inline-block bg-slate-700 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-600;
+  }
+
+  /* Bouton principal */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+}
+
+/* ====================================
+   ANIMATION FADE-IN AU SCROLL
+   Utilisée avec IntersectionObserver
+   ==================================== */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====================================
+   SCROLLBAR PERSONNALISÉE
+   ==================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* ====================================
+   SÉLECTION DE TEXTE
+   ==================================== */
+::selection {
+  background: #3b82f6;
+  color: #fff;
+}
