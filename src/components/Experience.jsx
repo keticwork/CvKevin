@@ -1,169 +1,140 @@
 // Section Expériences Professionnelles — cartes du plus récent au plus ancien
 
-// Données de toutes les expériences professionnelles (hors périodes exclues)
+// Données de toutes les expériences professionnelles
 const experiences = [
   {
-    company: 'PROVOTRANS',
-    role: 'Chauffeur Livreur',
-    period: 'Juin 2023 — Septembre 2024',
-    type: 'CDI',
+    company: "Projets Entrepreneuriaux & Formation Numérique",
+    role: "Développement Web, Programmation & IA",
+    period: "2024 — Présent",
+    location: "Le Luc (83)",
+    type: "Projet",
     bullets: [
-      'Gestion et optimisation de tournées de livraison quotidiennes sur le département du Var.',
-      'Chargement, déchargement et contrôle des marchandises dans le respect des procédures qualité.',
-      'Relation client de proximité, suivi des enlèvements et gestion des anomalies de livraison.',
+      "Apprentissage autodidacte de la programmation web (HTML, CSS, JavaScript, React) et utilisation des outils numériques et IA dans une démarche de reconversion et de création de valeur.",
+      "RELIV — Service de livraison de colis de proximité : partenariat avec des sociétés de livraison pour éviter les retours entrepôt, stockage et livraison locale des colis aux destinataires à proximité.",
+      "En cours : plateforme numérique pour petits commerces locaux (restaurants, coiffeurs…) — création de site web, carte fidélité wallet iOS & Android, envoi de promotions clients.",
+      "En cours : plateforme de mise en relation particuliers / artisans locaux, avec présentation vidéo style TikTok.",
+    ],
+    link: "https://reliv-ten.vercel.app/",
+    linkLabel: "Voir le projet RELIV →",
+  },
+  {
+    company: "Groupe Vicat, VPI",
+    role: "Chauffeur SPL — Grue Auxiliaire",
+    period: "Juin 2023 — Septembre 2024",
+    location: "Le Luc (83)",
+    type: "CDI",
+    bullets: [
+      "Conduite d'un ensemble articulé poids lourd + remorque 44 tonnes équipé d'une grue auxiliaire R490.",
+      "Livraisons de matériaux auprès de magasins de négoce et de chantiers de construction dans les départements 83, 06, 04 et 84.",
+      "Chargement et déchargement autonome à la grue auxiliaire R490, dans le respect strict des règles de sécurité.",
     ],
   },
   {
-    company: 'LCRD',
-    role: 'Opérateur Logistique',
-    period: 'Mars 2023 — Juin 2023',
-    type: 'Mission',
+    company: "TRANSMAT",
+    role: "Chauffeur PL 19T",
+    period: "Juin 2021 — Avril 2022",
+    location: "Drap (06)",
+    type: "CDI",
     bullets: [
-      'Réception, tri et expédition des colis dans un entrepôt logistique à flux tendu.',
-      'Préparation de commandes et gestion des stocks avec rigueur et précision.',
-      'Respect des cadences de production et des normes de sécurité en entrepôt.',
+      "Conduite d'un poids lourd 19 tonnes pour la livraison de literie et sommiers auprès d'une clientèle professionnelle et particulière.",
+      "Secteur de livraison : départements 06 et 83.",
+      "Gestion des bons de livraison et relation client directe.",
     ],
   },
   {
-    company: 'TRANSMAT',
-    role: 'Chauffeur Livreur / Logistique',
-    period: 'Juin 2021 — Avril 2022',
-    type: 'CDD',
+    company: "STAR'S SERVICE — Sous-traitant Amazon",
+    role: "Chauffeur Livreur VL",
+    period: "Avril 2021 — Mai 2021",
+    location: "Saint-Laurent-du-Var (06)",
+    type: "CDD",
     bullets: [
-      'Livraison de marchandises auprès d\'une clientèle professionnelle et particulière, gestion des bons de livraison.',
-      'Participation aux opérations logistiques en entrepôt : réception, contrôle et rangement des stocks.',
-      'Optimisation des itinéraires pour réduire les délais et les coûts de transport.',
+      "Livraison de colis en véhicule léger pour le compte d'Amazon auprès de particuliers sur Nice et ses environs.",
+      "Gestion des tournées et respect des délais de livraison.",
     ],
   },
   {
-    company: 'STAR\'S SERVICE',
-    role: 'Agent de service',
-    period: 'Avril 2021 — Mai 2021',
-    type: 'Mission',
+    company: "ELIS CÔTE D'AZUR",
+    role: "Chauffeur PL 19T",
+    period: "Mai 2018 — Novembre 2018",
+    location: "Carros (06)",
+    type: "CDD",
     bullets: [
-      'Réalisation de prestations de services en milieu professionnel selon les consignes du client.',
-      'Travail en autonomie avec respect des délais et des standards de qualité définis.',
+      "Conduite d'un poids lourd 19 tonnes pour la livraison de textile et linge professionnel.",
+      "Livraisons auprès des plages privées de la Croisette à Cannes.",
+      "Gestion des flux de livraison et suivi qualité des articles transportés.",
     ],
   },
   {
-    company: 'BEST INTERIM',
-    role: 'Opérateur Logistique',
-    period: '2015 — 2019 (missions)',
-    type: 'Intérim',
+    company: "THALES AIR SYSTEMS",
+    role: "Monteur Câbleur Intégrateur — Radars Militaires",
+    period: "Janvier 2016 — Juillet 2017",
+    location: "Limours (91)",
+    type: "CDD",
     bullets: [
-      'Missions ponctuelles en entrepôt logistique : préparation de commandes, picking et inventaires.',
-      'Polyvalence sur différents postes en fonction des besoins de production.',
-      'Capacité d\'adaptation rapide aux environnements et aux procédures internes.',
+      "Montage, câblage et intégration de systèmes radar militaires dans le respect strict des procédures.",
+      "Lecture et interprétation de schémas électriques et de plans techniques.",
+      "Déplacements aux Émirats Arabes Unis pour les opérations d'installation sur site.",
     ],
   },
   {
-    company: 'ELIS CÔTE D\'AZUR',
-    role: 'Agent de service logistique',
-    period: 'Mai 2018 — Novembre 2018',
-    type: 'CDD',
+    company: "CRIT — Groupe Latécoère / Latelec",
+    role: "Monteur Câbleur Aéronautique",
+    period: "Janvier 2015 — Août 2015",
+    location: "Le Bourget (93) — Orly (94)",
+    type: "Intérim",
     bullets: [
-      'Tri, traitement et expédition du linge professionnel dans le respect des délais de production.',
-      'Gestion des flux entrants et sortants avec suivi qualité des articles traités.',
-      'Travail en équipe dans un environnement cadencé et exigeant.',
+      "Montage et câblage aéronautique en milieu industriel pour le groupe Latécoère / Latelec.",
+      "Travaux sur avions Boeing 777, KC-135 et Falcon 7X dans le respect des procédures aéronautiques.",
     ],
   },
   {
-    company: 'THALES AIR SYSTEMS',
-    role: 'Technicien / Opérateur',
-    period: 'Janvier 2016 — Juillet 2017',
-    type: 'Contrat',
+    company: "Groupe Jaulin — Fonction Meuble",
+    role: "Chauffeur 20m³ — Chef d'Équipe — Chef de Chantier",
+    period: "Novembre 2008 — Août 2013",
+    location: "Chilly-Mazarin (91)",
+    type: "CDI",
     bullets: [
-      'Assemblage, câblage et contrôle de systèmes électroniques et électrotechniques de haute précision.',
-      'Lecture et interprétation de schémas électriques et de plans techniques.',
-      'Participation aux opérations de maintenance préventive et aux tests de conformité des équipements.',
+      "Livraison et installation de mobilier pour des événements professionnels sur Paris et région parisienne.",
+      "Progression de chauffeur 20m³ à chef d'équipe puis chef de chantier.",
+      "Management d'équipes d'intérimaires pour les opérations d'installation.",
+      "Déplacements en Allemagne pour des missions événementielles.",
     ],
   },
   {
-    company: 'DLSI',
-    role: 'Mission intérim — Industrie',
-    period: 'Septembre 2015 — Octobre 2015',
-    type: 'Intérim',
+    company: "COCA-COLA ENTREPRISE",
+    role: "Technicien PSPA (alternance)",
+    period: "Septembre 2004 — Juin 2006",
+    location: "Grigny (91)",
+    type: "Alternance",
     bullets: [
-      'Mission en milieu industriel : opérations de montage et de contrôle qualité en chaîne de production.',
-      'Respect strict des consignes de sécurité et des normes de fabrication.',
+      "Formation en alternance de 2 ans pour l'obtention du Bac Pro PSPA — Pilotage de Systèmes de Production Automatisée.",
+      "Conduite de lignes de production automatisées et réapprovisionnement en matières premières.",
+      "Réglage et paramétrage des machines de production au sein d'un grand groupe industriel.",
     ],
   },
   {
-    company: 'CRIT',
-    role: 'Mission intérim — Logistique',
-    period: 'Janvier 2015 — Août 2015',
-    type: 'Intérim',
+    company: "GTIE IDF / GTIE INFI",
+    role: "Électrotechnicien (alternance)",
+    period: "Septembre 2002 — Juin 2004",
+    location: "Snecma Villaroche (77)",
+    type: "Alternance",
     bullets: [
-      'Préparation de commandes, gestion des stocks et chargement/déchargement en entrepôt.',
-      'Utilisation d\'équipements de manutention dans le respect des procédures de sécurité.',
-      'Suivi des bons de livraison et vérification de la conformité des marchandises.',
+      "Câblage d'armoires électriques et travaux électriques variés en milieu industriel.",
+      "Formation en alternance pour l'obtention du BEP Électrotechnique.",
     ],
   },
-  {
-    company: 'MANPOWER FRANCE',
-    role: 'Opérateur / Logistique',
-    period: '2002 — 2008 (missions diverses)',
-    type: 'Intérim',
-    bullets: [
-      'Missions variées en industrie et logistique : opérateur sur ligne de production, manutention, conditionnement.',
-      'Capacité d\'adaptation à différents secteurs d\'activité et environnements de travail.',
-      'Acquis d\'une large expérience terrain en production industrielle et en gestion de flux logistiques.',
-    ],
-  },
-  {
-    company: 'FONCTION MEUBLES',
-    role: 'Vendeur Conseil',
-    period: 'Novembre 2008 — Août 2013',
-    type: 'CDI',
-    bullets: [
-      'Conseil et accompagnement des clients dans leurs projets d\'aménagement intérieur.',
-      'Gestion du rayon, mise en valeur des produits (merchandising) et tenue des stocks.',
-      'Atteinte et dépassement des objectifs de vente dans un contexte concurrentiel.',
-    ],
-  },
-  {
-    company: 'SON ET LUMIÈRE',
-    role: 'Technicien son et lumière',
-    period: 'Octobre 2004 — Novembre 2004',
-    type: 'Mission',
-    bullets: [
-      'Installation et exploitation de systèmes audio et d\'éclairage lors d\'événements.',
-      'Câblage, réglage et maintenance du matériel technique de scène.',
-    ],
-  },
-  {
-    company: 'COCA-COLA ENTREPRISE',
-    role: 'Technicien Électrotechnicien (alternance)',
-    period: 'Septembre 2004 — Juin 2006',
-    type: 'Alternance',
-    bullets: [
-      'Formation et mise en pratique des compétences en électrotechnique au sein d\'un grand groupe industriel.',
-      'Maintenance préventive et corrective des équipements électriques et automatisés.',
-      'Obtention du Bac Pro Électrotechnique en parallèle des missions en entreprise.',
-    ],
-  },
-  {
-    company: 'GTIE IDF / GTIE INFI',
-    role: 'Électrotechnicien (alternance)',
-    period: 'Septembre 2002 — Juin 2004',
-    type: 'Alternance',
-    bullets: [
-      'Réalisation de travaux d\'installation et de câblage électrique en milieu industriel et tertiaire.',
-      'Lecture de plans et schémas électriques, pose de chemins de câbles et raccordements.',
-      'Obtention du BEP Électrotechnique en fin de formation.',
-    ],
-  },
-]
+];
 
 // Correspondance type de contrat → couleur badge
 const typeColors = {
-  CDI:       'bg-green-500/20 text-green-300 border-green-500/40',
-  CDD:       'bg-blue-500/20 text-blue-300 border-blue-500/40',
-  Intérim:   'bg-orange-500/20 text-orange-300 border-orange-500/40',
-  Alternance:'bg-purple-500/20 text-purple-300 border-purple-500/40',
-  Mission:   'bg-slate-500/20 text-slate-300 border-slate-500/40',
-  Contrat:   'bg-teal-500/20 text-teal-300 border-teal-500/40',
-}
+  CDI: "bg-green-500/20 text-green-300 border-green-500/40",
+  CDD: "bg-blue-500/20 text-blue-300 border-blue-500/40",
+  Intérim: "bg-orange-500/20 text-orange-300 border-orange-500/40",
+  Alternance: "bg-purple-500/20 text-purple-300 border-purple-500/40",
+  Mission: "bg-slate-500/20 text-slate-300 border-slate-500/40",
+  Contrat: "bg-teal-500/20 text-teal-300 border-teal-500/40",
+  Projet: "bg-pink-500/20 text-pink-300 border-pink-500/40",
+};
 
 function Experience() {
   return (
@@ -194,13 +165,23 @@ function Experience() {
                     {exp.company}
                   </h3>
                   {/* Poste occupé */}
-                  <p className="text-blue-400 font-medium text-sm">{exp.role}</p>
+                  <p className="text-blue-400 font-medium text-sm">
+                    {exp.role}
+                  </p>
+                  {/* Ville (optionnel) */}
+                  {exp.location && (
+                    <p className="text-slate-500 text-xs mt-0.5">
+                      📍 {exp.location}
+                    </p>
+                  )}
                 </div>
 
                 {/* Période et type de contrat */}
                 <div className="flex flex-col sm:items-end gap-1.5 shrink-0">
                   <span className="text-slate-400 text-sm">{exp.period}</span>
-                  <span className={`inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full border ${typeColors[exp.type] || typeColors['Mission']}`}>
+                  <span
+                    className={`inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full border ${typeColors[exp.type] || typeColors["Mission"]}`}
+                  >
                     {exp.type}
                   </span>
                 </div>
@@ -209,18 +190,35 @@ function Experience() {
               {/* Bullet points de description */}
               <ul className="space-y-1.5 mt-3" role="list">
                 {exp.bullets.map((bullet, i) => (
-                  <li key={i} className="flex items-start gap-2 text-slate-400 text-sm leading-relaxed">
-                    <span className="text-blue-400 mt-1.5 shrink-0">▸</span>
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 text-slate-400 text-sm leading-relaxed"
+                  >
+                    <span className="text-blue-400 shrink-0 leading-none mt-[3px]">
+                      ▸
+                    </span>
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
+
+              {/* Lien vers projet (optionnel) */}
+              {exp.link && (
+                <a
+                  href={exp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold text-pink-400 hover:text-pink-300 border border-pink-500/40 hover:border-pink-400 bg-pink-500/10 hover:bg-pink-500/20 px-3 py-1.5 rounded-full transition-all"
+                >
+                  🔗 {exp.linkLabel || exp.link}
+                </a>
+              )}
             </article>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Experience
+export default Experience;

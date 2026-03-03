@@ -4,7 +4,6 @@ import Header from './components/Header.jsx'
 import About from './components/About.jsx'
 import Skills from './components/Skills.jsx'
 import Experience from './components/Experience.jsx'
-import Timeline from './components/Timeline.jsx'
 import Education from './components/Education.jsx'
 import Projects from './components/Projects.jsx'
 import Hobbies from './components/Hobbies.jsx'
@@ -46,7 +45,6 @@ function App() {
         <About />
         <Skills />
         <Experience />
-        <Timeline />
         <Education />
         <Projects />
         <Hobbies />
