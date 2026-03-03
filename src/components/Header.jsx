@@ -7,22 +7,53 @@ const navLinks = [
   { label: 'Compétences',  href: '#skills' },
   { label: 'Expériences',  href: '#experience' },
   { label: 'Formation',    href: '#education' },
-  { label: 'Projets',      href: '#projects' },
   { label: 'Passions',     href: '#hobbies' },
   { label: 'Contact',      href: '#contact' },
 ]
+
+// IDs des sections à observer pour la surbrillance active
+const SECTION_IDS = ['about', 'skills', 'experience', 'education', 'hobbies', 'contact']
 
 function Header() {
   // État pour le menu burger sur mobile
   const [menuOpen, setMenuOpen] = useState(false)
   // État pour le fond opaque après scroll
   const [scrolled, setScrolled] = useState(false)
+  // Section actuellement visible — détermine l'onglet actif en bleu
+  const [activeSection, setActiveSection] = useState('about')
 
   // Détecte le scroll pour rendre la navbar opaque
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Observe les sections pour mettre à jour l'onglet actif
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      {
+        threshold: 0.3,
+        // -80px en haut pour tenir compte de la navbar fixe
+        // -40% en bas pour éviter que la section suivante s'active trop tôt
+        rootMargin: '-80px 0px -40% 0px',
+      }
+    )
+
+    // Observe chaque section par son ID
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
   }, [])
 
   // Ferme le menu mobile quand on clique sur un lien
@@ -51,7 +82,12 @@ function Header() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-slate-300 hover:text-white hover:bg-slate-700/50 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  link.href === '#' + activeSection
+                    ? 'text-blue-400 bg-slate-700/60'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                }`}
+                aria-current={link.href === '#' + activeSection ? 'page' : undefined}
               >
                 {link.label}
               </a>
@@ -86,7 +122,12 @@ function Header() {
                 <a
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="block text-slate-300 hover:text-white hover:bg-slate-700/50 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    link.href === '#' + activeSection
+                      ? 'text-blue-400 bg-slate-700/60'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                  }`}
+                  aria-current={link.href === '#' + activeSection ? 'page' : undefined}
                 >
                   {link.label}
                 </a>

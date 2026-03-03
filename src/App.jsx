@@ -5,7 +5,6 @@ import About from './components/About.jsx'
 import Skills from './components/Skills.jsx'
 import Experience from './components/Experience.jsx'
 import Education from './components/Education.jsx'
-import Projects from './components/Projects.jsx'
 import Hobbies from './components/Hobbies.jsx'
 import Contact from './components/Contact.jsx'
 
@@ -46,7 +45,6 @@ function App() {
         <Skills />
         <Experience />
         <Education />
-        <Projects />
         <Hobbies />
         <Contact />
       </main>
