@@ -4,7 +4,7 @@
 const projects = [
   {
     title: 'CV Web Interactif',
-    description: 'Conception et développement de ce CV en ligne avec React, Tailwind CSS et Vite. Intégration d\'animations au scroll, frise chronologique interactive et formulaire de contact. Déployé sur Vercel.',
+    description: 'Conception et développement de ce CV en ligne avec React, Tailwind CSS et Vite. Animations au scroll, formulaire de contact Formspree, export PDF et QR code intégrés. Déployé sur Vercel.',
     tags: ['React 18', 'Tailwind CSS', 'Vite', 'Vercel', 'HTML5 sémantique'],
     icon: '🌐',
     status: 'En ligne',

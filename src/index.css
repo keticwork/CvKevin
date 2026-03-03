@@ -102,3 +102,64 @@ body {
   background: #3b82f6;
   color: #fff;
 }
+
+/* ====================================
+   IMPRESSION / EXPORT PDF
+   @media print masque les éléments
+   non pertinents pour le PDF
+   ==================================== */
+@media print {
+  /* Fond blanc, texte noir */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Cache : navbar, boutons, scrollbar, footer, QR code, lien PDF */
+  header,
+  footer,
+  .btn-primary,
+  a[href="#contact"],
+  a[href="#experience"],
+  #qr-code-block,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Supprime les animations */
+  .fade-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Cartes en blanc avec bordure grise */
+  .card {
+    background: #fff !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  /* Texte lisible en noir */
+  .text-slate-300,
+  .text-slate-400,
+  .text-slate-500,
+  .text-white {
+    color: #111 !important;
+  }
+
+  .text-blue-400 {
+    color: #1d4ed8 !important;
+  }
+
+  /* Pas de coupure dans les expériences */
+  article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Marges d'impression */
+  @page {
+    margin: 1.5cm;
+  }
+}

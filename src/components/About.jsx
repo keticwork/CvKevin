@@ -10,8 +10,8 @@ function About() {
       qrRef.current.innerHTML = ''
       new window.QRCode(qrRef.current, {
         text: 'https://cv-kevin-seven.vercel.app/',
-        width: 120,
-        height: 120,
+        width: 128,
+        height: 128,
         colorDark: '#ffffff',
         colorLight: '#1e293b',
         correctLevel: window.QRCode.CorrectLevel.H,
@@ -39,69 +39,89 @@ function About() {
           </h1>
 
           {/* Titre professionnel */}
-          <p className="text-lg sm:text-xl text-blue-400 font-semibold mb-6">
+          <p className="text-lg sm:text-xl text-blue-400 font-semibold mb-5">
             Professionnel Polyvalent | Logistique &amp; Industrie
           </p>
 
-          {/* Bloc infos contact + QR code côte à côte */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+          {/* ── Ligne infos de contact sur une seule ligne ── */}
+          <div className="flex flex-wrap justify-center items-center gap-4 mb-8 text-slate-400 text-sm">
 
-            {/* Informations de contact */}
-            <div className="flex flex-col items-center sm:items-start gap-3 text-slate-400 text-sm">
-              <span className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                Le Luc, Var (83340)
-              </span>
-              <a
-                href="tel:+33658962718"
-                className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"
-              >
-                <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                06 58 96 27 18
-              </a>
-              <a
-                href="mailto:KPICHON83@gmail.com"
-                className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"
-              >
-                <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                KPICHON83@gmail.com
-              </a>
-            </div>
+            {/* Localisation */}
+            <span className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Le Luc, Var (83340)
+            </span>
 
-            {/* Séparateur vertical sur desktop */}
-            <div className="hidden sm:block w-px h-20 bg-slate-700" aria-hidden="true" />
+            <span className="text-slate-600 hidden sm:inline" aria-hidden="true">·</span>
 
-            {/* QR code vers le CV en ligne */}
-            <div className="flex flex-col items-center gap-2">
-              <div
-                ref={qrRef}
-                className="rounded-xl overflow-hidden border border-slate-600 p-1 bg-slate-800"
-                aria-label="QR code vers le CV en ligne"
-              />
-              <p className="text-slate-500 text-xs">Scanner pour voir le CV en ligne</p>
-            </div>
+            {/* Téléphone */}
+            <a href="tel:+33658962718" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
+              <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              06 58 96 27 18
+            </a>
 
+            <span className="text-slate-600 hidden sm:inline" aria-hidden="true">·</span>
+
+            {/* Email */}
+            <a href="mailto:KPICHON83@gmail.com" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
+              <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              KPICHON83@gmail.com
+            </a>
+
+            <span className="text-slate-600 hidden sm:inline" aria-hidden="true">·</span>
+
+            {/* Bouton PDF — .no-print masqué à l'impression via @media print dans index.css */}
+            <button
+              onClick={() => window.print()}
+              className="no-print flex items-center gap-1.5 text-xs hover:text-blue-400 transition-colors cursor-pointer"
+              aria-label="Télécharger le CV en PDF"
+            >
+              <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Télécharger en PDF
+            </button>
           </div>
 
-          {/* Accroche professionnelle — nouvelle version */}
-          <div className="card text-left">
-            <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-              Professionnel <strong className="text-white">polyvalent</strong>, j'ai exercé des métiers variés dans la{' '}
-              <strong className="text-white">logistique</strong>, le transport poids lourd, l'industrie aéronautique, le
-              management d'équipes et la maintenance industrielle. Cette diversité m'a forgé une vraie{' '}
-              <strong className="text-white">capacité d'adaptation</strong>, le sens des responsabilités et une rigueur
-              terrain. Curieux de nature, je m'intéresse aux{' '}
-              <strong className="text-white">outils numériques et aux nouvelles technologies</strong>, que j'intègre
-              progressivement dans mes projets personnels. Je cherche un environnement où je peux m'impliquer pleinement
-              et être <strong className="text-white">force de proposition</strong>.
-            </p>
+          {/* ── Présentation + QR code côte à côte (empilés sur mobile) ── */}
+          <div className="flex flex-col md:flex-row gap-6 items-stretch text-left">
+
+            {/* Card présentation — prend tout l'espace disponible */}
+            <div className="card flex-1">
+              <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
+                Professionnel <strong className="text-white">polyvalent</strong>, j'ai exercé des métiers variés dans la{' '}
+                <strong className="text-white">logistique</strong>, le transport poids lourd, l'industrie aéronautique, le
+                management d'équipes et la maintenance industrielle. Cette diversité m'a forgé une vraie{' '}
+                <strong className="text-white">capacité d'adaptation</strong>, le sens des responsabilités et une rigueur
+                terrain. Curieux de nature, je m'intéresse aux{' '}
+                <strong className="text-white">outils numériques et aux nouvelles technologies</strong>, que j'intègre
+                progressivement dans mes projets personnels. Je cherche un environnement où je peux m'impliquer pleinement
+                et être <strong className="text-white">force de proposition</strong>.
+              </p>
+            </div>
+
+            {/* QR code — id="qr-code-block" masqué à l'impression via @media print dans index.css */}
+            <div
+              id="qr-code-block"
+              className="flex flex-col items-center justify-center bg-slate-800 border border-slate-700 rounded-xl p-4 w-full md:w-36 shrink-0"
+            >
+              {/* QR code injecté par useEffect via la lib CDN qrcodejs */}
+              <div
+                ref={qrRef}
+                className="rounded-lg overflow-hidden"
+                aria-label="QR code vers le CV en ligne"
+              />
+              <p className="text-slate-500 text-xs text-center mt-3 leading-tight">
+                Scanner pour voir<br />le CV en ligne
+              </p>
+            </div>
           </div>
 
           {/* Boutons d'action rapide */}
