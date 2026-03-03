@@ -17,6 +17,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Fichiers Claude Code (prompts internes)
+PROMPT_VSCODE.md
+
 # Éditeurs / IDE
 .vscode/*
 !.vscode/extensions.json

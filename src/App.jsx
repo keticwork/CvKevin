@@ -53,7 +53,7 @@ function App() {
 
       {/* Pied de page discret */}
       <footer className="text-center py-6 text-slate-500 text-sm border-t border-slate-800">
-        <p>© 2024 Kevin Pichon — CV Web Interactif</p>
+        <p>© 2025 Kevin Pichon — CV Web Interactif</p>
       </footer>
     </div>
   )

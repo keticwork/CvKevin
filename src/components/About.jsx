@@ -26,12 +26,7 @@ function About() {
       aria-label="Présentation de Kevin Pichon"
     >
       <div className="container-cv">
-        <div className="text-center max-w-3xl mx-auto fade-section">
-
-          {/* Initiales en cercle décoratif */}
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-slate-600 text-white text-3xl font-bold mb-6 shadow-xl shadow-blue-500/20">
-            KP
-          </div>
+        <div className="text-center mx-auto fade-section">
 
           {/* Nom complet */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
@@ -77,17 +72,19 @@ function About() {
 
             <span className="text-slate-600 hidden sm:inline" aria-hidden="true">·</span>
 
-            {/* Bouton PDF — .no-print masqué à l'impression via @media print dans index.css */}
-            <button
-              onClick={() => window.print()}
-              className="no-print flex items-center gap-1.5 text-xs hover:text-blue-400 transition-colors cursor-pointer"
-              aria-label="Télécharger le CV en PDF"
+            {/* Lien vers le CV PDF — s'ouvre dans un nouvel onglet avec option téléchargement */}
+            <a
+              href="/cv-kevin-pichon.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-print flex items-center gap-1.5 text-xs hover:text-blue-400 transition-colors"
+              aria-label="Ouvrir le CV en PDF"
             >
               <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Télécharger en PDF
-            </button>
+              CV en PDF
+            </a>
           </div>
 
           {/* ── Présentation + QR code côte à côte (empilés sur mobile) ── */}
@@ -110,7 +107,7 @@ function About() {
             {/* QR code — id="qr-code-block" masqué à l'impression via @media print dans index.css */}
             <div
               id="qr-code-block"
-              className="flex flex-col items-center justify-center bg-slate-800 border border-slate-700 rounded-xl p-4 w-full md:w-36 shrink-0"
+              className="flex flex-col items-center justify-center bg-slate-800 border border-slate-700 rounded-xl p-4 w-full md:w-44 shrink-0"
             >
               {/* QR code injecté par useEffect via la lib CDN qrcodejs */}
               <div
