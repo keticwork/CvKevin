@@ -40,10 +40,10 @@ function Header() {
         })
       },
       {
-        threshold: 0.3,
+        threshold: 0,
         // -80px en haut pour tenir compte de la navbar fixe
-        // -40% en bas pour éviter que la section suivante s'active trop tôt
-        rootMargin: '-80px 0px -40% 0px',
+        // -50% en bas : la section s'active dès que son haut dépasse le milieu de l'écran
+        rootMargin: '-80px 0px -50% 0px',
       }
     )
 

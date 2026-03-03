@@ -59,6 +59,10 @@ function Contact() {
       }
     }
 
+    if (!formData.message.trim()) {
+      newErrors.message = "Le message est requis.";
+    }
+
     return newErrors;
   };
 
@@ -267,15 +271,15 @@ function Contact() {
                 )}
               </div>
 
-              {/* Message (optionnel) */}
+              {/* Message */}
               <div>
                 <label
                   htmlFor="message"
                   className="block text-sm font-medium text-slate-300 mb-1.5"
                 >
                   Message{" "}
-                  <span className="text-slate-500 font-normal text-xs">
-                    (optionnel)
+                  <span className="text-red-400" aria-hidden="true">
+                    *
                   </span>
                 </label>
                 <textarea
@@ -285,8 +289,23 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="Décrivez votre besoin, le poste proposé, ou toute autre information..."
                   rows={5}
-                  className="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all resize-y"
+                  className={`w-full bg-slate-800 border rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-y ${
+                    errors.message
+                      ? "border-red-500"
+                      : "border-slate-600 focus:border-blue-500"
+                  }`}
+                  aria-describedby={errors.message ? "message-error" : undefined}
+                  aria-invalid={!!errors.message}
                 />
+                {errors.message && (
+                  <p
+                    id="message-error"
+                    className="mt-1 text-sm text-red-400"
+                    role="alert"
+                  >
+                    {errors.message}
+                  </p>
+                )}
               </div>
 
               {/* Bouton d'envoi */}
